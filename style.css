@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+.container-flex {
+    display: flex;
+}
+.clearfix::after {
+    display: table;
+    content: '';
+    clear: both;
+}
+h1, h2, h3 {
+    color: white;
+    font-size: 35px;
+}
+
+main .container-flex:first-child {
+    height: 100vh;
+    flex-direction: column;
+}
+main .container-flex.adapted {
+    flex-direction: row;
+}
+* a {
+    text-decoration: none;
+}
+* a:hover {
+    color: white;
+}
+ul {
+    list-style: none;
+}
+.active {
+    border-left: 3px solid green;
+}
+.active a, .active i {
+    color: white;
+}
+.cta-btn {
+    border-radius: 30px;
+    border: 1px solid white;
+    padding: 5px 25px;
+    text-transform: uppercase;
+    background-color: white;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.cta-btn:hover {
+    transform: scale(1.1);
+}
+.show {
+    display: none;
+}
+.hidden {
+    visibility: hidden;
+}
+.showoff {
+    visibility: visible;
+}
+/* End General */
+
+/* styling player */
+#player {
+    background-color: #282828;
+    height: 100px;
+    width: 100%;
+}
+.btmright, .btmcenter, .btmleft {
+    width: calc(100% / 3);
+}
+#player img {
+    max-width: 50px;
+    margin: 0 10px;
+}
+#player i {
+    margin: 0 10px;
+}
+#player i:hover, #player img:hover {
+    color: white;
+    cursor: pointer;
+}
+#player .btmleft p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#player .btmleft i:hover {
+    transition: transform .2s;
+    transform: scale(1.3);
+}
+#player.container-flex {
+    justify-content: space-between;
+}
+#player .btmleft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.btmleft #artist {
+    margin: 0 5px;
+}
+.btmleft #artist p:first-child {
+    color: white;
+    font-weight: bold;
+}
+#player .btmright {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#player .btmcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btmcenter .play-btn {
+    margin-bottom: 10px;
+}
+.time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.full-progress-bar.mini {
+    width: 100px;
+}
+.full-progress-bar {
+  width: 400px;
+  margin: 0 10px;
+  padding-bottom: 5px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+/* end styling player */
+
+/* Styling Aside */
+#aside {
+    background-color: black;
+    color: white;
+    width: 230px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+}
+#aside img {
+    width: 140px;
+    padding-bottom: 30px;
+    align-self: center;
+    cursor: pointer;
+}
+#aside .top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 30px;
+}
+#aside .top i {
+    padding: 10px;
+    margin-left: 10px;
+}
+#aside .top li {
+    padding: 5px 10px;
+}
+#aside .top li:first-child a .hide {
+    color: white;
+}
+#aside .top .active i {
+    margin-left: 5px;
+}
+#aside .top span:hover {
+    color: white;
+}
+#aside .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+#aside .bottom p {
+    font-weight: 400;
+}
+#aside .cta-btn.black {
+    background-color: transparent;
+}
+#aside .cta-btn.black a {
+    color: white;
+    font-size: 12px;
+}
+#aside .cta-btn.white a {
+    color: black;
+    font-size: 12px;
+}
+#aside .cta-btn.white {
+    padding: 5px 40px;
+}
+/* end styling aside */
+
+/* Styling Mainview */
+#mainview {
+    background-color: #181818;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#mainview .top ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+#mainview .top a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#mainview .top li {
+    padding: 5px 15px;
+}
+#mainview .top .active {
+    position: relative;
+    border: none;
+}
+#greenbar {
+    width: 30px;
+    height: 2px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#mainview .center {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+#mainview .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+#mainview .bottom a {
+    font-weight: bold;
+    color: white;
+}
+.img-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-left: 0;
+}
+#mainview .bottom.lastone {
+    padding-bottom: 50px;
+}
+#mainview .bottom img {
+    border-radius: 50%;
+    width: 180px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+/* End styling Mainview */
+
+/* styling scrollbar */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Styling Scrollbar */
+::-webkit-scrollbar-track {
+    background-color: #181818;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* ending styling scrollbar */
+
+
+
+
+
+
+/* @media query */
+@media screen and (max-width: 1024px) {
+    .full-progress-bar {
+        width: 200px;
+    }
+}
+@media screen and (max-width: 850px) {
+    #mainview .bottom img {
+        width: 100px;
+    }
+    .hidden {
+        display: block;
+        visibility: visible;
+        padding: 40px 15px;
+    }
+    .showoff {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    #mainview .top ul {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .btmright, .btmleft {
+        visibility: hidden;
+        width: 0;
+    }
+    .btmcenter {
+        width: 100%;
+    }
+    #player {
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #aside {
+        width: 50px;
+    }
+    #aside .bottom {
+        visibility: hidden;
+    }
+    #aside .top i {
+        margin: 0;
+    }
+    #aside .top .active i {
+        margin-left: -4px;
+    }
+    .hide {
+        display: none;
+    }
+    .show {
+        display: block;
+    }
+    #aside img.show {
+        margin-top: 10px;
+        width: 30px;
+    }
+    #aside .top li {
+        padding: 5px;
+    }
+}
+@media screen and (max-width: 391px) {
+    #mainview .bottom img {
+        width: 190px;
+        margin: 10px 30px;
+    }
+}
