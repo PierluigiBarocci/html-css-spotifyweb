@@ -25,6 +25,7 @@ main .container-flex:first-child {
 }
 main .container-flex.adapted {
     flex-direction: row;
+    height: calc(100vh - 100px);
 }
 * a {
     text-decoration: none;
@@ -96,6 +97,7 @@ ul {
 #player.container-flex {
     justify-content: space-between;
 }
+
 #player .btmleft {
     display: flex;
     justify-content: flex-start;
@@ -180,11 +182,11 @@ ul {
     background-color: black;
     color: white;
     width: 230px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-weight: bold;
+    overflow: hidden;
 }
 #aside img {
     width: 140px;
@@ -219,7 +221,6 @@ ul {
     flex-direction: column;
     align-items: center;
     padding-bottom: 30px;
-    padding-top: 30px;
 }
 #aside .bottom p {
     font-weight: 400;
@@ -244,7 +245,6 @@ ul {
 #mainview {
     background-color: #181818;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -366,15 +366,19 @@ ul {
     }
 }
 @media screen and (max-width: 768px) {
-    .btmright, .btmleft {
-        visibility: hidden;
-        width: 0;
+    
+    #player .btmleft, #player .btmright {
+        display: none;
     }
     .btmcenter {
         width: 100%;
     }
+    main .container-flex.adapted {
+        flex-direction: row;
+        height: calc(100vh - 75px);
+    }
     #player {
-        height: 75px;
+        height: 100px;
     }
 }
 
@@ -383,7 +387,7 @@ ul {
         width: 50px;
     }
     #aside .bottom {
-        visibility: hidden;
+        display: none;
     }
     #aside .top i {
         margin: 0;
